@@ -62,11 +62,26 @@ export default function Contact() {
             name="contact"
             method="POST"
             data-netlify="true"
+            onSubmit={(e) => {
+              e.preventDefault();
+          
+              const form = e.target;
+          
+              fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(new FormData(form)).toString(),
+              })
+                .then(() => alert("Message sent successfully!"))
+                .catch((error) => alert("Error: " + error));
+            }}
           >
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
                 Name:
               </label>
+
+              <input type="hidden" name="form-name" value="contact" />
 
               <input
                 type="text"
