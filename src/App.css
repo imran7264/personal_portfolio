@@ -1,11 +1,16 @@
 :root {
   --linear-text: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   transition: background 0.3s linear;
   font-size: 18px;
+  scroll-behavior: smooth;
+  transition: 1s linear;
 }
 
 /* for dark mode card */

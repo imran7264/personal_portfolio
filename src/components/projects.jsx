@@ -58,65 +58,7 @@ export default function Projects() {
 
             </Card>
         ))}
-        {/* <div className="card shadow p-0 border">
-          <img
-            src={TodoImg}
-            alt="image"
-            className="card-img-top border-bottom"
-          />
-          <div className="card-body">
-            <h5 className="card-title">ToDo List</h5>
-            <p className="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit iure
-              unde animi officiis in nesciunt sed nisi dolor aliquam magni!
-            </p>
-            <a href="#" className="btn btn-primary btn-sm">
-              Know More
-            </a>
-          </div>
-        </div>
-
-        <div className="card shadow p-0 border">
-          <img src={ClockImg} alt="image" className="card-img-top" />
-          <div className="card-body">
-            <h5 className="card-title">ToDo List</h5>
-            <p className="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit iure
-              unde animi officiis in nesciunt sed nisi dolor aliquam magni!
-            </p>
-            <a href="#" className="btn btn-primary btn-sm">
-              Know More
-            </a>
-          </div>
-        </div>
-
-        <div className="card shadow p-0 border">
-          <img src={CalciImg} alt="image" className="card-img-top" />
-          <div className="card-body">
-            <h5 className="card-title">ToDo List</h5>
-            <p className="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit iure
-              unde animi officiis in nesciunt sed nisi dolor aliquam magni!
-            </p>
-            <a href="#" className="btn btn-primary btn-sm">
-              Know More
-            </a>
-          </div>
-        </div>
-
-        <div className="card shadow p-0 border">
-          <img src={ExpandableCardImg} alt="image" className="card-img-top" />
-          <div className="card-body">
-            <h5 className="card-title">ToDo List</h5>
-            <p className="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit iure
-              unde animi officiis in nesciunt sed nisi dolor aliquam magni!
-            </p>
-            <a href="#" className="btn btn-primary btn-sm">
-              Know More
-            </a>
-          </div>
-        </div> */}
+        
       </div>
     </section>
   );
