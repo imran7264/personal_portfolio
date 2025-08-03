@@ -1,0 +1,99 @@
+import Shape from "./shape";
+import { FaGithub, FaLinkedin, FaPhone, FaEnvelope } from "react-icons/fa";
+export default function Contact() {
+  return (
+    <section
+      className="container-fluid w-100 vh-100 dark position-relative"
+      id="contact"
+    >
+      <Shape
+        width={400}
+        height={400}
+        top={"0%"}
+        left={"0%"}
+        animation={"waveAnim 2.5s infinite"}
+      />
+      <div className="row h-100 w-100 align-items-center justify-content-around flex-column-reverse flex-lg-row">
+        <div className="col-sm-12 col-lg-4 text-center" data-aos="fade-down">
+          <h3 className="linear-text">Shaikh imran</h3>
+          <ul
+            className="list d-flex align-items-center justify-content-center flex-column gap-3 flex-sm-row"
+            id="information"
+          >
+            <li className="list-item"></li>
+            <li className="list-item">
+              <FaPhone className="m-2" />
+              <span>(+91)7264903252</span>
+            </li>
+            <li className="list-item">
+              <FaEnvelope className="m-2" />
+              <span>imranshaikh82639@gmail.com</span>
+            </li>
+          </ul>
+          <p className="text mb-0">follow me on</p>
+
+          <div className="icon-container">
+            <a className="icon" href="https://github.com/imran7264">
+              <FaGithub className="text-black" />
+            </a>
+            <a
+              className="icon"
+              href="https://www.linkedin.com/in/shaikh-imran-b5a616225/"
+            >
+              <FaLinkedin className="text-primary" />
+            </a>
+          </div>
+          <address className="address fst-italic">
+            Ward 4 Gaibipura <br />
+            Risod Washim, Maharashtra <br />
+            India.
+          </address>
+        </div>
+
+        <div className="col-sm-12 col-lg-6" data-aos="fade-up">
+          <form id="form" className="z-1" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+            <div className="mb-3">
+              <label htmlFor="name" className="form-label">
+                Name:
+              </label>
+
+              <input
+                type="name"
+                className="form-control"
+                id="name"
+                placeholder="Example name"
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email address
+              </label>
+
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                placeholder="Example@gmail.com"
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="message" className="form-label">
+                Message
+              </label>
+              <textarea
+                className="form-control"
+                id="message"
+                rows="3"
+                placeholder="Some Message"
+              ></textarea>
+            </div>
+            <button className="btn btn-primary btn-sm">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
