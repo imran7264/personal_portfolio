@@ -6,18 +6,37 @@ const navLinks = [
   { name: "Skills", href: "#skill", id: "skill" },
   { name: "About", href: "#about", id: "about" },
   { name: "Projects", href: "#project", id: "project" },
-  { name: "Contact", href: "#contact", id: "contact" }
+  { name: "Contact", href: "#contact", id: "contact" },
 ];
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
-  // const [activeLink, setActiveLink] = useState("home");
+  const [activeLink, setActiveLink] = useState("home");
 
   useEffect(() => {
     document.body.className = darkMode
       ? "text-white dark-mode"
       : "text-black light-mode";
   }, [darkMode]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+    navLinks.forEach((link) => {
+      const section = document.getElementById(link.id);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header>
@@ -48,10 +67,10 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <li key={link.id} className="nav-item">
                   <a
-                    className="nav-link" //${
-                    //   activeLink === link.id ? "active" : ""
-                    // }`}
-                    // onClick={() => setActiveLink(link.id)}
+                    className={`nav-link ${
+                      activeLink === link.id ? "active" : ""
+                    }`}
+                    onClick={() => setActiveLink(link.id)}
                     href={link.href}
                   >
                     {link.name}

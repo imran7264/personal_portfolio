@@ -26,10 +26,7 @@ export default function Home() {
           id="back-img"
           data-aos="fade-left"
         >
-          <div
-            className="border-0 shadow-md text-center card-top align-self-end align-self-md-center"
-            
-          >
+          <div className="border-0 shadow-md text-center card-top align-self-end align-self-md-center">
             <div className="img-top align-self-start">
               <img className="w-50 rounded" src={topImg} alt="logo" />
             </div>
@@ -39,16 +36,16 @@ export default function Home() {
         <div
           className="col-12 col-md-6 d-flex align-items-center text-center"
           id="intro"
-          data-aos="fade-right"
+          data-aos="fade-left"
         >
           <div className="card-body">
-            <h1 className="card-title">
+            <h1 className="card-title display-5 fw-bold">
               <span className="linear-text">I'm Shaikh Imran,</span> frontend
               developer
             </h1>
             <h3>
               I am a{" "}
-              <span className="linear-text">
+              <span className="linear-text d-inline-block">
                 <Typewriter
                   options={{
                     cursor: "_",
@@ -61,10 +58,11 @@ export default function Home() {
               </span>
             </h3>
 
-            <p className="card-text fs-5 text-capitalize font-currier">
-              Hi i am shaikh imran a passionate Front-End-Developer, curently i
-              am learning MERN stack looking for a valuable job where i can
-              apply my logic and design to master my skills.{" "}
+            <p className="card-text fs-5 fst-italic" style={{letterSpacing: 2}}>
+              Hi, I'm Shaikh Imran — a passionate Front-End Developer currently
+              learning the MERN stack. I'm seeking a valuable opportunity where
+              I can apply my logic and design skills to grow and master my
+              craft.{" "}
             </p>
             <div className="container col-sm-8 col-12 d-inline-flex justify-content-center gap-4">
               <Button href={"#about"}>

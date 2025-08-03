@@ -27,7 +27,7 @@ export default function About() {
       <section id="about" className="container">
         <div className="row d-flex justify-content-center">
 
-<div className="col-md-12 col-lg-8 p-0" data-aos="fade-up">
+<div className="col-md-12 col-lg-8 px-0" data-aos="fade-up">
  <div className="text-center">
    <h2 className="linear-text">
     
@@ -35,7 +35,7 @@ export default function About() {
      
    </h2>
    <h4 className="text-center">Based in Risod Maharashtra India.</h4>
-   <p>
+   <p className="px-2" style={{ letterSpacing: 1}}>
      I specialize in building responsive and interactive websites using
      modern web technologies like HTML, CSS, JavaScript, React, and
      Bootstarp. My goal is to create clean, efficient, and
