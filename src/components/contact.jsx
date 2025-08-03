@@ -51,8 +51,18 @@ export default function Contact() {
         </div>
 
         <div className="col-sm-12 col-lg-6" data-aos="fade-up">
-          <form id="form" className="z-1" name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
+          <form name="contact" netlify hidden>
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <textarea name="message"></textarea>
+          </form>
+          <form
+            id="form"
+            className="z-1"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+          >
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
                 Name:
@@ -63,6 +73,7 @@ export default function Contact() {
                 className="form-control"
                 id="name"
                 placeholder="Example name"
+                required
               />
             </div>
 
@@ -76,6 +87,7 @@ export default function Contact() {
                 className="form-control"
                 id="email"
                 placeholder="Example@gmail.com"
+                required
               />
             </div>
 
