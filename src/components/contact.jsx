@@ -69,7 +69,7 @@ export default function Contact() {
               </label>
 
               <input
-                type="name"
+                type="text"
                 className="form-control"
                 id="name"
                 placeholder="Example name"
@@ -96,6 +96,7 @@ export default function Contact() {
                 Message
               </label>
               <textarea
+              name="message"
                 className="form-control"
                 id="message"
                 rows="3"
