@@ -1,11 +1,31 @@
 import Shape from "./shape";
 import { FaGithub, FaLinkedin, FaPhone, FaEnvelope } from "react-icons/fa";
 export default function Contact() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => alert("Message sent successfully!"))
+      .catch((error) => alert("Error: " + error));
+  };
+
   return (
     <section
       className="container-fluid w-100 vh-100 dark position-relative"
       id="contact"
     >
+      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+      </form>
       <Shape
         width={400}
         height={400}
@@ -51,31 +71,15 @@ export default function Contact() {
         </div>
 
         <div className="col-sm-12 col-lg-6" data-aos="fade-up">
-          <form name="contact" netlify hidden>
-            <input type="text" name="name" />
-            <input type="email" name="email" />
-            <textarea name="message"></textarea>
-          </form>
           <form
+            onSubmit={handleSubmit}
             id="form"
             className="z-1"
             name="contact"
             method="POST"
             data-netlify="true"
-            onSubmit={(e) => {
-              e.preventDefault();
-          
-              const form = e.target;
-          
-              fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(new FormData(form)).toString(),
-              })
-                .then(() => alert("Message sent successfully!"))
-                .catch((error) => alert("Error: " + error));
-            }}
           >
+            <input type="hidden" name="form-name" value="contact" />
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
                 Name:
@@ -111,14 +115,16 @@ export default function Contact() {
                 Message
               </label>
               <textarea
-              name="message"
+                name="message"
                 className="form-control"
                 id="message"
                 rows="3"
                 placeholder="Some Message"
               ></textarea>
             </div>
-            <button type="submit" className="btn btn-primary btn-sm">Submit</button>
+            <button type="submit" className="btn btn-primary btn-sm">
+              Submit
+            </button>
           </form>
         </div>
       </div>
