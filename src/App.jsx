@@ -16,6 +16,7 @@ import Aos from "aos";
 import Hr from "./components/hr";
 import Footer from "./components/footer";
 
+
 function App() {
 
   useEffect(() => {
