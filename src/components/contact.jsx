@@ -2,14 +2,13 @@ import { useState } from "react";
 import Shape from "./shape";
 import { FaGithub, FaLinkedin, FaPhone, FaEnvelope } from "react-icons/fa";
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [text, setText] = useState("");
+  const [status, setStatus] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const form = e.target;
+    const form = document.querySelector("form");
+    console.log(form);
     const formData = new FormData(form);
 
     fetch("/", {
@@ -17,8 +16,14 @@ export default function Contact() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => alert("Message sent successfully!"))
-      .catch((error) => alert("Error: " + error));
+      .then(() => {
+        setStatus("SUCCESS");
+        form.reset();
+      })
+      .catch((error) => {
+        setStatus("ERROR while submitting the form");
+        console.error("ERROR:", error);
+      });
   };
 
   return (
@@ -26,7 +31,6 @@ export default function Contact() {
       className="container-fluid w-100 vh-100 dark position-relative"
       id="contact"
     >
-     
       <Shape
         width={400}
         height={400}
@@ -93,10 +97,8 @@ export default function Contact() {
                 name="name"
                 className="form-control"
                 id="name"
-                value={name}
                 placeholder="Example name"
                 required
-                onChange={(e) => setName(e.target.value)}
               />
             </div>
 
@@ -110,10 +112,8 @@ export default function Contact() {
                 name="email"
                 className="form-control"
                 id="email"
-                value={email}
                 placeholder="Example@gmail.com"
                 required
-                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -125,12 +125,19 @@ export default function Contact() {
                 name="message"
                 className="form-control"
                 id="message"
-                value={text}
                 rows="3"
                 placeholder="Some Message"
-                onChange={(e) => setText(e.target.value)}
               ></textarea>
             </div>
+            {status === "SUCCESS" && (
+              <h5 className="fw-normal text-success">
+                Your credientials has been submitted
+              </h5>
+            )}
+            {status === "ERROR" && (
+              <h5 className="fw-normal text-danger">Error while submitting</h5>
+            )}
+
             <button type="submit" className="btn btn-primary btn-sm">
               Submit
             </button>
