@@ -15,8 +15,10 @@ import "aos/dist/aos.css";
 import Aos from "aos";
 import Hr from "./components/hr";
 import Footer from "./components/footer";
+import VisitorCounter from "./components/visitorCount";
 
 function App() {
+
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -25,6 +27,7 @@ function App() {
       offset: 200,
     });
   }, []);
+
 
   return (
     <Container>
@@ -40,6 +43,7 @@ function App() {
       <Contact />
       <Hr />
       <Footer />
+      <VisitorCounter />
     </Container>
   );
 }
