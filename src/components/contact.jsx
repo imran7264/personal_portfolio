@@ -1,6 +1,12 @@
+import { useState } from "react";
 import Shape from "./shape";
 import { FaGithub, FaLinkedin, FaPhone, FaEnvelope } from "react-icons/fa";
 export default function Contact() {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -91,8 +97,10 @@ export default function Contact() {
                 type="text"
                 className="form-control"
                 id="name"
+                value={name}
                 placeholder="Example name"
                 required
+                onKeyUp={(e) => setName(e.target.value)}
               />
             </div>
 
@@ -105,8 +113,10 @@ export default function Contact() {
                 type="email"
                 className="form-control"
                 id="email"
+                value={email}
                 placeholder="Example@gmail.com"
                 required
+                onKeyUp={(e) => setEmail(e.target.value)} 
               />
             </div>
 
@@ -118,8 +128,10 @@ export default function Contact() {
                 name="message"
                 className="form-control"
                 id="message"
+                value={text}
                 rows="3"
                 placeholder="Some Message"
+                onKeyUp={(e) => setText(e.target.value)} 
               ></textarea>
             </div>
             <button type="submit" className="btn btn-primary btn-sm">
