@@ -100,7 +100,7 @@ export default function Contact() {
                 value={name}
                 placeholder="Example name"
                 required
-                onKeyUp={(e) => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
 
@@ -116,7 +116,7 @@ export default function Contact() {
                 value={email}
                 placeholder="Example@gmail.com"
                 required
-                onKeyUp={(e) => setEmail(e.target.value)} 
+                onChange={(e) => setEmail(e.target.value)} 
               />
             </div>
 
@@ -131,7 +131,7 @@ export default function Contact() {
                 value={text}
                 rows="3"
                 placeholder="Some Message"
-                onKeyUp={(e) => setText(e.target.value)} 
+                onChange={(e) => setText(e.target.value)} 
               ></textarea>
             </div>
             <button type="submit" className="btn btn-primary btn-sm">
