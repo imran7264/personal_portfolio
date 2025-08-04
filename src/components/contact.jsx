@@ -2,7 +2,6 @@ import { useState } from "react";
 import Shape from "./shape";
 import { FaGithub, FaLinkedin, FaPhone, FaEnvelope } from "react-icons/fa";
 export default function Contact() {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
@@ -27,11 +26,7 @@ export default function Contact() {
       className="container-fluid w-100 vh-100 dark position-relative"
       id="contact"
     >
-      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="message"></textarea>
-      </form>
+     
       <Shape
         width={400}
         height={400}
@@ -95,6 +90,7 @@ export default function Contact() {
 
               <input
                 type="text"
+                name="name"
                 className="form-control"
                 id="name"
                 value={name}
@@ -111,12 +107,13 @@ export default function Contact() {
 
               <input
                 type="email"
+                name="email"
                 className="form-control"
                 id="email"
                 value={email}
                 placeholder="Example@gmail.com"
                 required
-                onChange={(e) => setEmail(e.target.value)} 
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -131,7 +128,7 @@ export default function Contact() {
                 value={text}
                 rows="3"
                 placeholder="Some Message"
-                onChange={(e) => setText(e.target.value)} 
+                onChange={(e) => setText(e.target.value)}
               ></textarea>
             </div>
             <button type="submit" className="btn btn-primary btn-sm">
