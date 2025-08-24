@@ -63,7 +63,7 @@ export default function Projects() {
             title={project.title}
             text={project.text}
             >
-                <Button href={project.link}>view Live</Button>
+                <Button href={project.link} target={"_blank"}>view Live</Button>
 
             </Card>
         ))}
