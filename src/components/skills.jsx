@@ -115,8 +115,8 @@ const SKILL_DATA = [
   { id: 1, title: "HTML/CSS", value: 90, bg: "bg-danger" },
   { id: 2, title: "Javascript", value: 70, bg: "bg-warning" },
   { id: 3, title: "React.js", value: 50, bg: "bg-info" },
-  { id: 4, title: "Express.js", value: 10, bg: "bg-info" },
-  { id: 5, title: "Node.js", value: 20 },
+  { id: 4, title: "Responsive Design", value: 80, bg: "bg-info" },
+  { id: 5, title: "Node.js", value: 30 },
   { id: 6, title: "PHP", value: 50 },
 ];
 

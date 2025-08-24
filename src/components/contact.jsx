@@ -34,7 +34,7 @@ export default function Contact() {
 
   return (
     <section
-      className="container-fluid w-100 vh-100 dark position-relative"
+      className="container-fluid vh-100 w-100 dark position-relative"
       id="contact"
     >
      
@@ -49,15 +49,15 @@ export default function Contact() {
         <div className="col-sm-12 col-lg-4 text-center" data-aos="fade-down">
           <h3 className="linear-text">Shaikh imran</h3>
           <ul
-            className="list d-flex align-items-center justify-content-center flex-column gap-3 flex-sm-row"
+            className="list gap-3 d-flex align-items-center justify-content-center flex-column"
             id="information"
           >
-            <li className="list-item"></li>
-            <li className="list-item">
+            
+            <li className="list-item d-flex align-items-center">
               <FaPhone className="m-2" />
               <span>(+91)7264903252</span>
             </li>
-            <li className="list-item">
+            <li className="list-item d-flex">
               <FaEnvelope className="m-2" />
               <span>imranshaikh82639@gmail.com</span>
             </li>

@@ -1,9 +1,10 @@
 import Typewriter from "typewriter-effect";
 import Button from "./button";
 import { FaArrowRight, FaUser } from "react-icons/fa";
-import topImg from "../assets/images/coding.jpg";
+import imranImg from "../assets/images/imran-i.jpg";
 import "aos/dist/aos.css";
 import Shape from "./shape";
+import { LuMailX } from "react-icons/lu";
 
 export default function Home() {
   return (
@@ -20,15 +21,15 @@ export default function Home() {
         animation={"waveAnim 2.5s infinite"}
       />
 
-      <div className="row flex-row-reverse justify-content-center vh-100">
+      <div className="row flex-row-reverse justify-content-center min-vh-100">
         <div
-          className="col-12 col-md-6 d-flex align-items-center"
+          className="col-12 col-md-6 d-flex align-items-center justify-content-center bg-info mt-5 mt-md-0 pt-5"
           id="back-img"
           data-aos="fade-left"
         >
           <div className="border-0 shadow-md text-center card-top align-self-end align-self-md-center">
             <div className="img-top align-self-start">
-              <img className="w-50 rounded" src={topImg} alt="logo" />
+              <img className="rounded-5 w-75" src={imranImg} alt="logo" id="logo"/>
             </div>
           </div>
         </div>
@@ -36,7 +37,7 @@ export default function Home() {
         <div
           className="col-12 col-md-6 d-flex align-items-center text-center"
           id="intro"
-          data-aos="fade-left"
+          data-aos="fade-right"
         >
           <div className="card-body">
             <h1 className="card-title display-5 fw-bold">
@@ -64,7 +65,7 @@ export default function Home() {
               I can apply my logic and design skills to grow and master my
               craft.{" "}
             </p>
-            <div className="container col-sm-8 col-12 d-inline-flex justify-content-center gap-4">
+            <div className="container col-12 d-inline-flex justify-content-center gap-4">
               <Button href={"#about"}>
                 Know More <FaArrowRight />
               </Button>

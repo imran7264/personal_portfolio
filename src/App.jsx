@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import React from "react";
 import "./App.css";
-import "./index.css";
 import Container from "./components/container";
-import Navbar from "./components/navbar";
+import TopNavbar from "./components/navbar";
 import Home from "./components/home";
 import Skills from "./components/skills";
 import About from "./components/about";
@@ -31,7 +30,7 @@ function App() {
 
   return (
     <Container>
-      <Navbar />
+      <TopNavbar />
       <Home />
       <Hr />
       <Skills />
