@@ -23,7 +23,7 @@ export default function Home() {
 
       <div className="row flex-row-reverse justify-content-center min-vh-100">
         <div
-          className="col-12 col-md-6 d-flex align-items-center justify-content-center bg-info mt-5 mt-md-0 pt-5"
+          className="col-12 col-md-6 d-flex align-items-center justify-content-center mt-5 mt-md-0 pt-5"
           id="back-img"
           data-aos="fade-left"
         >
